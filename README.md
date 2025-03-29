@@ -9,13 +9,21 @@
 ## Things I used
 
 ・WM - Komorebi [*config*](https://pastebin.com/N8bpgZkY)
+
 ・bar -  YASB [*config*](https://pastebin.com/53jpDnCC) [*styles*](https://pastebin.com/7hcUNNNz)
+
 ・Browser -  Zen [*zen-themes.css*](https://pastebin.com/hQzdpJ7u)
+
 ・Menu -  Nile soft Shell [*shell.nss*](https://pastebin.com/R5CJQssX)
+
 ・launcher -  Flow Launcher [*theme*](https://github.com/abhidahal/onsetGlaze.flow)
+
 ・terminal -  Warp
+
 ・Wallpapers -  [*Link*](https://www.wallpaperengine.io/en)
+
 ・Windows msstyles theme -  [by niivu](https://www.deviantart.com/niivu/art/pi11z-for-Windows-11-1084568949) ([Guide](https://www.deviantart.com/niivu/art/How-to-install-Windows-10-or-11-Themes-708835586) to install)
+
 ・Right Click menu -  [theme](https://github.com/lunar-os/windowsdesktop3/blob/main/theme.nss)
 
 ## Extras
