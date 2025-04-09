@@ -1,0 +1,53 @@
+watch_config_changes: True
+global:
+  border_width: 2 # Width of the border
+  border_offset: -1 # How close the border is to the window edges
+  border_radius: -1 # Radius of the corners. Leave it at -1 to let tacky-borders handle the radius or set your own custom value.
+
+  active_color:
+    colors: ["#262C56", "#4D5966"]
+    direction:
+      start: [0.0, 0.0]
+      end: [1.0, 1.0]
+      
+  inactive_color:
+    colors: ['#00000000','#00000000']
+    direction:
+      start: [0.0, 0.0]
+      end: [1.0, 1.0]
+      
+  initialize_delay: 500 # I reduce the delay here because of the fade animation which takes some time itself
+  unminimize_delay: 500
+
+# Customize config options on a per-app basis
+window_rules:
+  - match: "Class"
+    name: "Windows.UI.Core.CoreWindow"
+    enabled: false
+
+  - match: "Class"
+    name: "XamlExplorerHostIslandWindow"
+    enabled: false
+
+  - match: "Title"
+    name: "Flow.Launcher"
+    enabled: false
+
+  - match: "Title"
+    name: "Zebar"
+    enabled: false
+
+  - match: "Title"
+    name: "keyviz"
+    enabled: false
+  # EXAMPLE CONFIGURATION:
+  # - match: "Class"               # Currently supports "Class" or "Title"
+  #   name: "MozillaWindowClass"   # Name of the class or title
+  #   strategy: "Equals"           # Optional. Currently supports "Equals", "Contains", or "Regex". Defaults to "Equals"
+  #   border_width: 10             # The next few options are all optional and default to global config if nothing is specified
+  #   border_radius: -10
+  #   border_offset: -10
+  #   active_color: "#ffffff"
+  #   inactive_color: "#000000"
+  #   enabled: true                # Optional. Enables or disables the border. Defaults to true. Note: you can't forcibly enable borders yet
+
