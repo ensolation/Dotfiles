@@ -1,0 +1,248 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "komorebic start --whkd --masir"
+  stop_command: "komorebic stop --whkd --masir"
+  reload_command: "komorebic stop --whkd --masir && komorebic start --whkd --masir"
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    animation:
+      enabled: true
+      duration: 1000
+    blur_effect:
+      enabled: true
+      acrylic: false
+      dark_mode: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: none
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 34
+    padding:
+      top: 16
+      left: 300
+      bottom: -2
+      right: 300
+    widgets:
+      left: ["komorebi_workspaces","wallpapers"]
+      center: ["clock"]
+      right: ["systray","brightness","divider","volume","divider","memory","divider","uwifi"]
+widgets:
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%I:%M %b %d}"
+      label_alt: "{%H:%M %b %d}"
+      timezones: []
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "\u23fc Offline"
+      label_workspace_btn: "󰫣"
+      label_workspace_active_btn: "󰫢"
+      label_workspace_populated_btn: "󰫣"
+      label_default_name: "{index}"
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+      animation: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{icon}"
+      layouts:
+        [
+          "bsp",
+          "columns",
+          "rows",
+          "grid",
+          "vertical_stack",
+          "horizontal_stack",
+          "ultrawide_vertical_stack",
+          "right_main_vertical_stack",
+        ]
+      layout_icons:
+        bsp: "BSP"
+        columns: "COLS"
+        rows: "ROWS"
+        grid: "GRID"
+        vertical_stack: "V-STACK"
+        horizontal_stack: "H-STACK"
+        ultrawide_vertical_stack: "W-STACK"
+        right_main_vertical_stack: "RMV-STACK"
+        monocle: "MONOCLE"
+        maximised: "MAX"
+        floating: "FLOATING"
+        paused: "PAUSED"
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8
+      callbacks:
+        on_left: "next_layout"
+        on_middle: "toggle_monocle"
+        on_right: "prev_layout"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8"  # Icon for muted
+        - "\uf026"  # Icon for 0-10% volume
+        - "\uf027"  # Icon for 11-30% volume
+        - "\uf027"  # Icon for 31-60% volume
+        - "\uf028"  # Icon for 61-100% volume
+      audio_menu:
+        blur: True
+        round_corners: True
+        round_corners_type: 'normal'
+        border_color: 'System'
+        alignment: 'right'
+        direction: 'down'
+        distance: 6
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+  divider:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "|"
+      label_alt: "|"
+      class_name: "div-widget"
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options: 
+      label: "<span>{icon}</span>{percent}%"
+      label_alt: "{icon} {percent}% | time: {time_remaining}"
+      charging_options: {icon_format: '{charging_icon} {icon}', blink_charging_icon: True}
+      status_thresholds: {critical: 10, low: 25, medium: 75, high: 95, full: 100}
+      status_icons: {icon_charging: '\uf0e7', icon_critical: '\uf244', icon_low: '\uf243', icon_medium: '\uf242', icon_high: '\uf241', icon_full: '\uf240'}
+      animation: {'enabled': True, 'type': 'fadeInOut', 'duration': 200}
+      callbacks: {on_left: 'toggle_label', on_middle: 'do_nothing', on_right: 'do_nothing'}
+      container_padding: {'top': 0, 'left': 0, 'bottom': 0, 'right': 0}
+  brightness:
+    type: "yasb.brightness.BrightnessWidget"
+    options:
+     label: "<span>{icon}</span> {percent}%"
+     label_alt: "Brightness {percent}%"
+     tooltip: true
+     hide_unsupported: true
+     brightness_toggle_level: [0, 50, 100]
+     auto_light: false
+     auto_light_icon: "\udb80\udce1"
+     auto_light_night_level: 35
+     auto_light_night_start_time: "19:00"
+     auto_light_night_end_time: "06:45"
+     auto_light_day_level: 75
+     brightness_icons: [
+       "\uf522",  # Icon for 0-25% brightness
+       "\uf522",  # Icon for 26-50% brightness
+       "\uf522",  # Icon for 51-75% brightness
+       "\uf522"   # Icon for 76-100% brightness
+     ]
+     brightness_menu:
+       blur: true
+       round_corners: true
+       round_corners_type: "normal"
+       border_color: "System"
+       alignment: "right"
+       direction: "down"
+       distance: 6
+     callbacks:
+       on_left: "toggle_label"
+     container_padding:
+       top: 0
+       left: 8
+       bottom: 0
+       right: 8
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uf4bc</span> {virtual_mem_percent}%"
+      label_alt: "<span>\uf4bc</span> VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      memory_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+  network:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span> {wifi_name}"
+      label_alt: "{wifi_name} {wifi_strength}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "exec cmd.exe /c start ms-settings:network"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      wifi_icons: [
+        "\udb82\udd2e",  # Icon for 0% strength
+        "\udb82\udd1f",  # Icon for 1-20% strength
+        "\udb82\udd22",  # Icon for 21-40% strength
+        "\udb82\udd25",  # Icon for 41-80% strength
+        "\udb82\udd28"   # Icon for 81-100% strength
+        ]
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "󰚥 "
+      label_expanded: "📎 "
+      label_position: "right"
+      icon_size: 14
+      pin_click_modifier: "alt"
+      show_unpinned: true
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: false
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<h2></h2>"
+      image_path: "C:\\Users\\boibl\\Pictures\\Wallpapers"
+      change_automatically: false
+      update_interval: 60
+      gallery:
+        enabled: true
+        blur: true
+        image_width: 296
+        image_per_page: 6
+        show_buttons: false
+        orientation: "portrait"
+        image_spacing: 10
+        lazy_load: true
+        lazy_load_delay: 10
+        lazy_load_fadein: 200
+        image_corner_radius: 20
+        enable_cache: true
+  uwifi:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: " pixel "
+      label_alt: " pixel "
+      class_name: "uwifi-widget"
+
