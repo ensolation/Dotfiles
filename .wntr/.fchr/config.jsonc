@@ -1,0 +1,70 @@
+{
+    "logo": "C:\\Users\\USER\\.config\\fastfetch\\ascii.txt",
+    "display": {
+        "separator": " ~ "
+},
+        "modules": [
+        "break",
+        {
+            "key": "",
+            "type": "title",
+            "format": "{user-name}",
+            "keyColor": "blue"
+        },
+    {
+         "type": "custom",
+         "format": "-----------------"
+    },
+    {
+            "type": "os",
+            "key": " ",
+            "format": "{pretty-name} {version} {variant} {arch}",
+            "keyColor": "blue"
+        },
+    {
+        "type": "kernel",
+            "key": " ",
+            "keyColor": "blue"
+        },
+    {
+        "type": "packages",
+            "key": "󰏗 ",
+            "keyColor": "blue"
+        },
+    {
+            "type": "wm",
+            "key": " ",
+            "keyColor": "blue"
+        },
+    {
+            "type": "shell",
+            "key": " ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": " ",
+            "keyColor": "blue"
+        },
+    {
+        "type": "initsystem",
+        "key": " ",
+        "keyColor": "blue"
+    },
+    {
+        "type": "memory",
+        "key": " ",
+        "keyColor" : "blue"
+    },
+{
+      "type": "uptime",
+      "key": "󱦟 ",
+      "keyColor": "blue"
+    },
+        {
+            "type": "custom",
+        "keyColor": "blue",
+            "format": "\u001b[90m󰫢  \u001b[31m󰫢  \u001b[32m󰫢  \u001b[33m󰫢  \u001b[34m󰫢  \u001b[35m󰫢  \u001b[36m󰫢  \u001b[37m󰫢 "        }
+    ]
+
+}
