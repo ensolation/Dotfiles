@@ -1,0 +1,80 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.34/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "animation": {
+    "enabled": true,
+    "fps": 240,
+    "style": "EaseOutSine",
+    "duration": 600
+  },
+  "border": false,
+  "border_colours": {
+    "single": "#ffffff",
+    "unfocused": "#00000000",
+    "monocle": "#ffffff",
+    "stack": "#ffffff"
+  },
+  "border_implementation": "Komorebi",
+  "border_offset": -1,
+  "border_style": "Rounded",
+  "border_width": 4,
+  "cross_monitor_move_behaviour": "Insert",
+  "default_container_padding": 8,
+  "default_workspace_padding": 8,
+  "float_override": false,
+  "global_work_area_offset": {
+    "right": 0,
+    "left": 0,
+    "top": 0,
+    "bottom": 0
+  },
+  "mouse_follows_focus": true,
+  "stackbar": {
+    "mode": "OnStack",
+    "tabs": {
+      "font_size": 0,
+      "background": "#ffffff",
+      "unfocused_text": "#ffffff",
+      "focused_text": "#ffffff",
+      "width": 300,
+      "font_family": "Segoe UI"
+    },
+    "label": "Process",
+    "height": 40
+  },
+  "transparency": false,
+  "transparency_alpha": 230,
+  "unmanaged_window_operation_behaviour": "Op",
+  "window_container_behaviour": "Create",
+  "window_hiding_behaviour": "Cloak",
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "Columns"
+        },
+        {
+          "name": "III",
+          "layout": "HorizontalStack"
+        },
+        {
+          "name": "IV",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "3",
+          "layout": "Rows"
+        }
+      ]
+    }
+  ]
+}
