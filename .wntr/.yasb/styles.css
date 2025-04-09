@@ -1,0 +1,300 @@
+
+:root {
+    --bg: rgba(0,0,0,0.6);
+    --main: #9ba2a7;
+    --wallpaper: url("C:/Users/boibl/AppData/Local/Temp/evangelion_2.jpg");
+    --color1: #3d3c6a;
+    --background: #07060c;
+    --color9: #3d3c6a;
+    --color7: #c1c0c2;
+    --color14: #9f97c2;
+    --color10: #555280;
+    --color3: #486192;
+    --cursor: #c1c0c2;
+    --color2: #555280;
+    --color5: #877dae;
+    --color13: #877dae;
+    --color0: #07060c;
+    --color15: #c1c0c2;
+    --color6: #9f97c2;
+    --color4: #6d6697;
+    --foreground: #c1c0c2;
+    --color11: #486192;
+    --color8: #555568;
+    --color12: #6d6697;
+}
+*{
+	font-size: 13px;
+	color: var(--main);
+	font-weight: 600;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0;
+	margin: 0; 
+    background-color: var(--bg);
+    border-radius: 0px;
+}
+.widget {
+	padding: 0 12px;
+	margin: 0;
+}
+.icon {
+	font-size: 16px;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin-left: 0px;
+    color: var(--main);
+}
+.widget .label {
+	padding: 0px 2px; 
+    color
+}
+
+
+
+
+.komorebi-workspaces .offline-status {
+    color: var(--main);
+    font-size: 12px;
+    padding: 0 0 0 4px;
+    font-weight:600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    color: var(--main);
+	margin:0;
+    font-size: 24px;
+    height: 34px;
+    width: 34px;
+    padding: 0 3px;
+    background: transparent;
+    border-radius: 0px;
+    transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+.komorebi-workspaces .ws-btn:hover {
+    background: transparent;
+    background-color: var(--color1);
+}
+.komorebi-workspaces .ws-btn.populated {
+    color: var(--main);
+}
+.komorebi-workspaces .ws-btn.active {
+    background-color: var(--color1);
+    border-radius: 20px;
+    margin-left: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: px;
+    transition: all 0.8s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+
+}
+.komorebi-workspaces .ws-btn.active:hover {
+    background-color: var(--color2);
+    transition: all 0.8s cubic-bezier(0.55, -0.68, 0.48, 1.682)
+}
+
+.volume-widget .icon {
+    padding-right: 3px;
+    padding-left: 0px;
+    font-size: 14px;
+    max-width: 20px;
+    min-width: 22px;
+    margin-left: 2px;
+}
+.clock-widget .icon {
+    color: var(--blue);
+    padding-right: 6px;
+    padding-left: 0px;
+}
+.volume-slider {
+    border: none;
+}
+.audio-menu {
+    background-color:rgba(13, 6, 10, 0.3); 
+}
+.audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.calendar {
+    background-color: rgba(17, 17, 27, 0.4);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(162, 177, 196, 0.85);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:selected {
+    color: rgb(255, 255, 255);
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .month-label {
+    font-weight: normal;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    margin-top: -20px;
+}
+.volume-slider {
+    border: none;
+}
+.volume-slider::groove {}
+.volume-slider::handle{} 
+.audio-menu {
+    background-color:rgba(17, 17, 27, 0.4); 
+}
+.audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 0px;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.div-widget .label {
+    color: var(--surface1)
+}
+.div-widget {
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.volume-widget {
+    margin-right: 3px;
+}
+.clock-widget {
+    margin: 0;
+    padding: 0;
+}
+.widget {
+    padding: 0;
+}
+.wifi-widget {
+    margin-right: 8px;
+}
+.brightness-widget {
+    margin-right: 2px;
+    margin-left: 0px;
+}
+.brightness-widget .icon {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.systray {
+    background: transparent;
+    border: None;
+    margin: 0;
+}
+
+.systray .unpinned-container {
+    background: transparent;
+    border-radius: 8px;
+}
+
+.systray .pinned-container {
+    background: transparent;
+}
+
+.systray .pinned-container[forceshow=true] {
+    background: red;
+}
+
+.systray .button {
+    border-radius: 4px;
+    padding: 2px 2px;
+}
+
+.systray .button:hover {
+    background: #727272;
+}
+
+.systray .button[dragging=true] {
+    background: orange;
+    border-color: #FF8800;
+}
+
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+}
+
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+
+.systray .unpinned-visibility-btn:hover {
+    border: 0px solid #AAAAAA;
+    border-radius: 4px;
+    border-color: #AAAAAA;
+}
+.wallpapers-widget {
+    padding: 0 7px 0 7px;
+}
+.wallpapers-gallery-window {
+    background-color: rgba(85, 42, 240, 0.01);
+    border: 0;
+    margin: 0;
+}
+.wallpapers-gallery-buttons {
+    background-color:rgba(255, 255, 255, 0);
+    color:var(--text);
+    border: none;
+    font-size: 16px;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin:0 8px 8px 8px;
+    width: 600px;
+}
+.wallpapers-gallery-buttons:hover {
+    background-color:rgba(255, 255, 255, 0.1)
+}
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 10px;
+ 
+}
+.wallpapers-gallery-image:hover {
+    border: 4px solid var(--sapphire);
+}
+.wallpapers-gallery-image.focused {
+    border: 4px solid var(--sapphire);
+}
