@@ -4,8 +4,8 @@
 
 <p align="center">How I customize my Windows 11 desktop</p>
 
-![](https://github.com/lorebookfeen/Dotfiles/blob/main/yeABNhU.jpeg)
-![](https://github.com/lorebookfeen/Dotfiles/blob/main/f47dlvu.jpeg)
+![](https://github.com/lorebookfeen/Dotfiles/blob/main/bluh.jpeg)
+![](https://github.com/lorebookfeen/Dotfiles/blob/main/bleh.jpeg)
 
 ## Things I used
 
