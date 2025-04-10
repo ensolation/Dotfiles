@@ -9,9 +9,9 @@
 
 ## Things I used
 
-・WM - Komorebi [*config*](https://pastebin.com/N8bpgZkY)
+・WM - Komorebi
 
-・bar -  YASB [*config*](https://pastebin.com/53jpDnCC) [*styles*](https://pastebin.com/7hcUNNNz)
+・bar -  YASB
 
 ・Browser -  Zen [*zen-themes.css*](https://pastebin.com/hQzdpJ7u)
 
