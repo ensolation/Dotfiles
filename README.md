@@ -1,11 +1,12 @@
 <br><br><br><br>
 
-
 <div class=badges align="center">
     <img src="https://github.com/user-attachments/assets/2b7370a0-9076-4e95-9576-0c3b5559d496" />
     <br><br><br><br>
-    <br><br>
 </div>
+<p align="center">
+    <h1 align="center">Sigh's Windows Desktop 🌊</h2>
+</p>
 <br><br><br>
 
 
