@@ -1,25 +1,23 @@
 <br><br><br><br>
 
-###
+
 <div class=badges align="center">
     <img src="https://github.com/user-attachments/assets/2b7370a0-9076-4e95-9576-0c3b5559d496" />
     <br><br><br><br>
     <br><br>
     <br><br>
     <br><br>
-    <a href="https://github.com/Nighty3098/nvim"><kbd> <br>Nvim config<br> </kbd></a>
 </div>
 <br><br><br>
 
 
 <div align="center">
     <summary><h1 align="center">DE</h1></summary>
-    <img src="images/de.png" width="90%"/>
+    <img src="imagesde.png" width="90%"/>
 </div>
 <br><br>
 <div align="center">
-    <summary><h1 align="center">Neovim && Kitty && Tmux</h1></summary>
-    <img src="images/nvim_1.png" width="80%"/>
+    <summary><h1 align="center">Zed && Cosmo</h1></summary>
     <img src="images/nvim_2.png" width="80%"/>
     <img src="images/nvim_3.png" width="80%"/>
 </div>
