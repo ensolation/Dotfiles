@@ -1,69 +1,77 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.34/schema.json",
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "resize_delta": 50,
   "animation": {
     "enabled": true,
+    "duration": 600,
     "fps": 240,
-    "style": "EaseOutSine",
-    "duration": 600
+    "style": {
+      "movement": "EaseOutBack",
+      "transparency": "Linear"
+    }
   },
   "border": false,
   "border_colours": {
-    "single": "#ffffff",
     "unfocused": "#00000000",
+    "stack": "#ffffff",
     "monocle": "#ffffff",
-    "stack": "#ffffff"
+    "single": "#ffffff"
   },
   "border_implementation": "Komorebi",
   "border_offset": -1,
   "border_style": "Rounded",
   "border_width": 4,
   "cross_monitor_move_behaviour": "Insert",
-  "default_container_padding": 8,
-  "default_workspace_padding": 8,
+  "default_container_padding": 14,
+  "default_workspace_padding": 14,
   "float_override": false,
   "global_work_area_offset": {
-    "right": 0,
     "left": 0,
-    "top": 0,
-    "bottom": 0
+    "top": 50,
+    "bottom": 48,
+    "right": 0
   },
   "mouse_follows_focus": true,
   "stackbar": {
-    "mode": "OnStack",
     "tabs": {
       "font_size": 0,
       "background": "#ffffff",
+      "font_family": "Segoe UI",
       "unfocused_text": "#ffffff",
-      "focused_text": "#ffffff",
       "width": 300,
-      "font_family": "Segoe UI"
+      "focused_text": "#ffffff"
     },
+    "height": 40,
     "label": "Process",
-    "height": 40
+    "mode": "OnStack"
   },
   "transparency": false,
   "transparency_alpha": 230,
   "unmanaged_window_operation_behaviour": "Op",
   "window_container_behaviour": "Create",
-  "window_hiding_behaviour": "Cloak",
+  "window_hiding_behaviour": "Minimize",
   "monitors": [
     {
       "workspaces": [
         {
           "name": "I",
-          "layout": "BSP"
+          "layout": "VerticalStack"
         },
         {
           "name": "II",
-          "layout": "Columns"
+          "layout": "VerticalStack"
         },
         {
           "name": "III",
-          "layout": "HorizontalStack"
+          "layout": "BSP"
         },
         {
           "name": "IV",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
           "layout": "BSP"
         }
       ]
@@ -71,10 +79,27 @@
     {
       "workspaces": [
         {
+          "name": "1",
+          "layout": "Rows"
+        },
+        {
+          "name": "2",
+          "layout": "Rows"
+        },
+        {
           "name": "3",
+          "layout": "Rows"
+        },
+        {
+          "name": "4",
+          "layout": "Rows"
+        },
+        {
+          "name": "5",
           "layout": "Rows"
         }
       ]
     }
   ]
 }
+
