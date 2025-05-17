@@ -4,19 +4,11 @@
     <br><br><br><br>
     <br><br>
     <br><br>
-    <img class="badge" src="https://img.shields.io/badge/Windows-FCC624?style=for-the-badge&logo=linux&logoColor=black&color=eed49f"  style="border-radius: 5px;"/>
     <br><br>
     <a href="https://github.com/Nighty3098/nvim"><kbd> <br>Nvim config<br> </kbd></a>
 </div>
 <br><br><br>
 
-<h1>Installing</h1>
-
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/Nighty3098/DevDotfiles.git --recurse-submodules
-bash install.sh
-```
 
 <div align="center">
     <summary><h1 align="center">DE</h1></summary>
