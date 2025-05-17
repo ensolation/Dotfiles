@@ -13,17 +13,17 @@
 
 <div align="center">
     <summary><h1 align="center">DE</h1></summary>
-    <img src="imagesde.png" width="90%"/>
+    <img src="pictures/imagesde.png" width="90%"/>
 </div>
 <br><br>
 <div align="center">
     <summary><h1 align="center">Zed && Cosmo</h1></summary>
-    <img src="images/nvim_2.png" width="80%"/>
-    <img src="images/nvim_3.png" width="80%"/>
+    <img src="pictures/cosmo_2.png" width="80%"/>
+    <img src="pictures/zed_3.png" width="80%"/>
 </div>
 <br><br>
 <div align="center">
     <summary><h1 align="center">Visual Studio Code</h1></summary>
-    <img src="images/code_wal.png" width="80%"/>
+    <img src="pictures/code_wal.png" width="80%"/>
     <img src="https://github.com/user-attachments/assets/28cb5943-899b-4fe3-8a53-8fe52672c7ff" width="80%"/>
 </div>
