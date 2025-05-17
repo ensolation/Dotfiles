@@ -6,9 +6,55 @@ komorebi:
   stop_command: "komorebic stop --whkd --masir"
   reload_command: "komorebic stop --whkd --masir && komorebic start --whkd --masir"
 bars:
-  primary-bar:
+  Primary-bar:
     enabled: true
-    screens: ["*"]
+    screens: ["2"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    animation:
+      enabled: true
+      duration: 700
+    blur_effect:
+      enabled: true
+      acrylic: false
+      dark_mode: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: none
+    window_flags:
+      always_on_top: false
+      windows_app_bar: false
+    dimensions:
+      width: "100%"
+      height: 34
+    padding:
+      top: 16
+      left: 400
+      bottom: 16
+      right: 400
+    widgets:
+      left: ["komorebi_workspaces", "wallpapers"]
+      center: ["clock", "power_menu"]
+      right:
+        [
+          "systray",
+          "uspace",
+          "ubattery",
+          "divider",
+          "brightness",
+          "divider",
+          "volume",
+          "divider",
+          "memory",
+          "divider",
+          "uwifi",
+          "uspace",
+        ]
+  Secondary-bar:
+    enabled: true
+    screens: ["5"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -25,33 +71,43 @@ bars:
       border_color: none
     window_flags:
       always_on_top: false
-      windows_app_bar: true
+      windows_app_bar: false
     dimensions:
       width: "100%"
       height: 34
     padding:
       top: 16
-      left: 300
-      bottom: -2
-      right: 300
+      left: 150
+      bottom: 0
+      right: 150
     widgets:
-      left: ["komorebi_workspaces","wallpapers"]
+      left: ["komorebi_workspaces", "wallpapers"]
       center: ["clock"]
-      right: ["systray","brightness","divider","volume","divider","memory","divider","uwifi"]
+      right: ["systray", "brightness", "divider", "uwifi", "uspace"]
 widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
       label: "{%I:%M %b %d}"
-      label_alt: "{%H:%M %b %d}"
+      label_alt: "{%I:%M %b %d}"
       timezones: []
+      callbacks:
+        on_left: "toggle_calendar"
+      calendar:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "center"
+        direction: "down"
+        offset_left: 0
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
       label_offline: "\u23fc Offline"
-      label_workspace_btn: "󰫣"
-      label_workspace_active_btn: "󰫢"
-      label_workspace_populated_btn: "󰫣"
+      label_workspace_btn: "\uf444"
+      label_workspace_active_btn: "\uf444"
+      label_workspace_populated_btn: "\uf444"
       label_default_name: "{index}"
       label_zero_index: false
       hide_empty_workspaces: false
@@ -106,18 +162,18 @@ widgets:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
       volume_icons:
-        - "\ueee8"  # Icon for muted
-        - "\uf026"  # Icon for 0-10% volume
-        - "\uf027"  # Icon for 11-30% volume
-        - "\uf027"  # Icon for 31-60% volume
-        - "\uf028"  # Icon for 61-100% volume
+        - "\ueee8" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
       audio_menu:
         blur: True
         round_corners: True
-        round_corners_type: 'normal'
-        border_color: 'System'
-        alignment: 'right'
-        direction: 'down'
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
         distance: 6
       callbacks:
         on_left: "toggle_volume_menu"
@@ -130,50 +186,65 @@ widgets:
       class_name: "div-widget"
   battery:
     type: "yasb.battery.BatteryWidget"
-    options: 
+    options:
       label: "<span>{icon}</span>{percent}%"
       label_alt: "{icon} {percent}% | time: {time_remaining}"
-      charging_options: {icon_format: '{charging_icon} {icon}', blink_charging_icon: True}
-      status_thresholds: {critical: 10, low: 25, medium: 75, high: 95, full: 100}
-      status_icons: {icon_charging: '\uf0e7', icon_critical: '\uf244', icon_low: '\uf243', icon_medium: '\uf242', icon_high: '\uf241', icon_full: '\uf240'}
-      animation: {'enabled': True, 'type': 'fadeInOut', 'duration': 200}
-      callbacks: {on_left: 'toggle_label', on_middle: 'do_nothing', on_right: 'do_nothing'}
-      container_padding: {'top': 0, 'left': 0, 'bottom': 0, 'right': 0}
+      charging_options:
+        { icon_format: "{charging_icon} {icon}", blink_charging_icon: True }
+      status_thresholds:
+        { critical: 10, low: 25, medium: 75, high: 95, full: 100 }
+      status_icons:
+        {
+          icon_charging: '\uf0e7',
+          icon_critical: '\uf244',
+          icon_low: '\uf243',
+          icon_medium: '\uf242',
+          icon_high: '\uf241',
+          icon_full: '\uf240',
+        }
+      animation: { "enabled": True, "type": "fadeInOut", "duration": 200 }
+      callbacks:
+        {
+          on_left: "toggle_label",
+          on_middle: "do_nothing",
+          on_right: "do_nothing",
+        }
+      container_padding: { "top": 0, "left": 0, "bottom": 0, "right": 0 }
   brightness:
     type: "yasb.brightness.BrightnessWidget"
     options:
-     label: "<span>{icon}</span> {percent}%"
-     label_alt: "Brightness {percent}%"
-     tooltip: true
-     hide_unsupported: true
-     brightness_toggle_level: [0, 50, 100]
-     auto_light: false
-     auto_light_icon: "\udb80\udce1"
-     auto_light_night_level: 35
-     auto_light_night_start_time: "19:00"
-     auto_light_night_end_time: "06:45"
-     auto_light_day_level: 75
-     brightness_icons: [
-       "\uf522",  # Icon for 0-25% brightness
-       "\uf522",  # Icon for 26-50% brightness
-       "\uf522",  # Icon for 51-75% brightness
-       "\uf522"   # Icon for 76-100% brightness
-     ]
-     brightness_menu:
-       blur: true
-       round_corners: true
-       round_corners_type: "normal"
-       border_color: "System"
-       alignment: "right"
-       direction: "down"
-       distance: 6
-     callbacks:
-       on_left: "toggle_label"
-     container_padding:
-       top: 0
-       left: 8
-       bottom: 0
-       right: 8
+      label: "<span>{icon}</span> {percent}%"
+      label_alt: "Brightness {percent}%"
+      tooltip: true
+      hide_unsupported: true
+      brightness_toggle_level: [0, 50, 100]
+      auto_light: false
+      auto_light_icon: "\udb80\udce1"
+      auto_light_night_level: 35
+      auto_light_night_start_time: "19:00"
+      auto_light_night_end_time: "06:45"
+      auto_light_day_level: 75
+      brightness_icons: [
+          "\uf522", # Icon for 0-25% brightness
+          "\uf522", # Icon for 26-50% brightness
+          "\uf522", # Icon for 51-75% brightness
+          "\uf522", # Icon for 76-100% brightness
+        ]
+      brightness_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        distance: 6
+      callbacks:
+        on_left: "toggle_label"
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -199,11 +270,11 @@ widgets:
         on_middle: "do_nothing"
         on_right: "toggle_label"
       wifi_icons: [
-        "\udb82\udd2e",  # Icon for 0% strength
-        "\udb82\udd1f",  # Icon for 1-20% strength
-        "\udb82\udd22",  # Icon for 21-40% strength
-        "\udb82\udd25",  # Icon for 41-80% strength
-        "\udb82\udd28"   # Icon for 81-100% strength
+          "\udb82\udd2e", # Icon for 0% strength
+          "\udb82\udd1f", # Icon for 1-20% strength
+          "\udb82\udd22", # Icon for 21-40% strength
+          "\udb82\udd25", # Icon for 41-80% strength
+          "\udb82\udd28", # Icon for 81-100% strength
         ]
   systray:
     type: "yasb.systray.SystrayWidget"
@@ -214,7 +285,7 @@ widgets:
       label_position: "right"
       icon_size: 14
       pin_click_modifier: "alt"
-      show_unpinned: true
+      show_unpinned: false
       show_unpinned_button: true
       show_battery: false
       show_volume: false
@@ -222,7 +293,7 @@ widgets:
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
-      label: "<h2></h2>"
+      label: "<h1>󰊓</h1>"
       image_path: "C:\\Users\\boibl\\Pictures\\Wallpapers"
       change_automatically: false
       update_interval: 60
@@ -239,10 +310,42 @@ widgets:
         lazy_load_fadein: 200
         image_corner_radius: 20
         enable_cache: true
+      run_after: # List of functions to run after wallpaper is updated
+        - "cmd.exe /c start /min pwsh -Command Import-Module 'C:/Users/boibl/winwal/winwal.psm1'"
+        - "cmd.exe /c start /min pwsh -Command update-waltheme"
+        - "cmd.exe /c start /min pwsh -command . C:/Users/boibl/yasb_pywal.ps1"
+        - "cmd.exe /c start /min pwsh -command . C:/Users/boibl/tacky_pywal.ps1"
   uwifi:
     type: "yasb.custom.CustomWidget"
     options:
       label: " pixel "
       label_alt: " pixel "
       class_name: "uwifi-widget"
-
+  ubattery:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "  100%"
+      label_alt: "  100%"
+      class_name: "ubattery-widget"
+  uspace:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "ㅤ‎"
+      label_alt: "‎ㅤ"
+      class_name: "uspace-widget"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: ""
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 300 # Milliseconds
+      button_row: 5 # Number of buttons in a row, min 1 max 5
+      buttons:
+        sleep: ["󰤄", "Sleep"]
+        signout: ["\udb80\udf43", "Sign out"]
+        shutdown: ["", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        hibernate: ["\uf28e", "Hibernate"]
+        cancel: ["\udb81\udf3a", "Cancel"]
