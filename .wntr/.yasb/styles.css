@@ -1,41 +1,40 @@
-
 :root {
-    --bg: rgba(0,0,0,0.6);
+    --bg: rgba(0,0,0,0.7);
     --main: #9ba2a7;
-    --wallpaper: url("C:/Users/boibl/AppData/Local/Temp/evangelion_2.jpg");
-    --color1: #3d3c6a;
-    --background: #07060c;
-    --color9: #3d3c6a;
-    --color7: #c1c0c2;
-    --color14: #9f97c2;
-    --color10: #555280;
-    --color3: #486192;
-    --cursor: #c1c0c2;
-    --color2: #555280;
-    --color5: #877dae;
-    --color13: #877dae;
-    --color0: #07060c;
-    --color15: #c1c0c2;
-    --color6: #9f97c2;
-    --color4: #6d6697;
-    --foreground: #c1c0c2;
-    --color11: #486192;
-    --color8: #555568;
-    --color12: #6d6697;
+    --wallpaper: url("C:/Users/boibl/AppData/Local/Temp/waves_crashing_waves_on_rocks.jpg");
+    --color1: #475B67;
+    --background: #101215;
+    --color9: #475B67;
+    --color7: #c3c3c4;
+    --color14: #768080;
+    --color10: #556973;
+    --color3: #67747B;
+    --cursor: #c3c3c4;
+    --color2: #556973;
+    --color5: #6D7B85;
+    --color13: #6D7B85;
+    --color0: #101215;
+    --color15: #c3c3c4;
+    --color6: #768080;
+    --color4: #5D7281;
+    --foreground: #c3c3c4;
+    --color11: #67747B;
+    --color8: #5a616e;
+    --color12: #5D7281;
 }
 *{
 	font-size: 13px;
 	color: var(--main);
 	font-weight: 600;
-	font-family: "JetBrainsMono NFP";
+	font-family: "JetBrainsMono NFP", "Ndot 55";
 	margin: 0;
 	padding: 0;
 }
 .yasb-bar {
 	padding: 0;
-	margin: 0; 
+	margin: 0;
     background-color: var(--bg);
-    border-radius: 0px;
+    border-radius: 13px;
 }
 .widget {
 	padding: 0 12px;
@@ -49,7 +48,7 @@
     color: var(--main);
 }
 .widget .label {
-	padding: 0px 2px; 
+	padding: 0px 2px;
     color
 }
 
@@ -68,32 +67,32 @@
 	margin:0;
     font-size: 24px;
     height: 34px;
-    width: 34px;
-    padding: 0 3px;
-    background: transparent;
-    border-radius: 0px;
-    transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    width: 28px;
 }
 .komorebi-workspaces .ws-btn:hover {
     background: transparent;
-    background-color: var(--color1);
+    border-radius: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+
+    background-color: var(--color9);
 }
 .komorebi-workspaces .ws-btn.populated {
     color: var(--main);
 }
 .komorebi-workspaces .ws-btn.active {
-    background-color: var(--color1);
-    border-radius: 20px;
+    background-color: var(--color9);
+    border-radius: 0px;
     margin-left: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: px;
-    transition: all 0.8s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
 
 }
 .komorebi-workspaces .ws-btn.active:hover {
     background-color: var(--color2);
-    transition: all 0.8s cubic-bezier(0.55, -0.68, 0.48, 1.682)
 }
 
 .volume-widget .icon {
@@ -113,7 +112,7 @@
     border: none;
 }
 .audio-menu {
-    background-color:rgba(13, 6, 10, 0.3); 
+    background-color:rgba(13, 6, 10, 0.3);
 }
 .audio-container .device {
     background-color:transparent;
@@ -140,7 +139,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    outline: none;  
+    outline: none;
 }
 .calendar .calendar-table::item:selected {
     color: rgb(255, 255, 255);
@@ -171,9 +170,9 @@
     border: none;
 }
 .volume-slider::groove {}
-.volume-slider::handle{} 
+.volume-slider::handle{}
 .audio-menu {
-    background-color:rgba(17, 17, 27, 0.4); 
+    background-color:rgba(17, 17, 27, 0.4);
 }
 .audio-container .device {
     background-color:transparent;
@@ -290,11 +289,66 @@
 .wallpapers-gallery-image {
     border: 4px solid transparent;
     border-radius: 10px;
- 
+
 }
 .wallpapers-gallery-image:hover {
     border: 4px solid var(--sapphire);
 }
 .wallpapers-gallery-image.focused {
     border: 4px solid var(--sapphire);
+}
+/* --- Power Menu Popup --- */
+/* Uptime text */
+.uptime {
+    font-size: 12px;
+    margin: 0 0 4px;
+}
+.power-menu-widget .label {
+    font-size: 14px;
+    margin-left: 0px;
+}
+.power-menu-popup {
+    background-color: rgba(2, 2, 2, 0.466);
+    border-radius: 12px;
+    border: 0px solid rgb(0, 0, 0);
+}
+.power-menu-popup .button {
+    padding: 0;
+    width: 150px;
+    height: 110px;
+    border-radius: 10px;
+    background-color: rgba(66, 66, 68, 0.247);
+    color: white;
+    border: 0px solid rgba(255, 255, 255, 0.1);
+    margin: 4px;
+}
+
+
+.power-menu-popup .button.hover {
+    background-color: rgb(64, 64, 68);
+    border: 0px solid rgb(26, 26, 27);
+}
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.425);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.power-menu-popup .button .icon {
+    font-size: 42px;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+    color: rgba(139, 201, 243, 0.568);
+}
+.power-menu-popup .button.cancel .label {
+    color: rgba(139, 201, 243, 0.568);
+}
+.power-menu-popup .button.shutdown .icon {
+    color: rgba(255, 9, 9, 0.685);
+}
+.power-menu-popup .button.shutdown .label {
+    color: rgba(255, 9, 9, 0.685);
 }
